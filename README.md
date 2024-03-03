@@ -1,6 +1,7 @@
 # omwg_dev repo
-The omwg_dev repository is dedicated to OMWG development simulations, which encompass:
-- Development simulations (including case directories and model sandboxes). 
+The omwg_dev repository is dedicated to the Community Earth System Model ([CESM](https://www.cesm.ucar.edu/)) Ocean Model Working Group ([OMWG](https://www.cesm.ucar.edu/working-groups/ocean)) simulations, which includes:
+- Development simulations (including case directories and model sandboxes);
+- Production simulations (including OMIP-like and other intercomparison projects); 
 - Relevant discussions to model development and diagnostics
 
 ## Development simulations
