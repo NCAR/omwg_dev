@@ -9,7 +9,8 @@ The list of development simulations can be found under [Issues](https://github.c
   - Each simulation is represented as a GitHub issue. 
   - Simulations can be sorted with labels (for instance, compset: GMOM, CMOM). 
   - Please provide as many details as possible. 
-
+  - You can view a spreadsheet that lists the current development simulations by clicking [here](https://docs.google.com/spreadsheets/d/1qidnw-aMdyRIxylL6uV33dilYuZUl59Z7klp5EUH5ZA/edit?usp=sharing).
+    
 ## Discussions 
 Discussions relevant to CESM/MOM6 development should be posted under [Discussions](https://github.com/NCAR/omwg_dev/discussions).
   
