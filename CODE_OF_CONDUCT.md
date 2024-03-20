@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **amwg_dev Github** is committed to fostering a respectful and inclusive community for all participants. This Code of Conduct outlines our expectations for behavior and principles that help create a positive and respectful atmosphere.
+The **omwg_dev Github** is committed to fostering a respectful and inclusive community for all participants. This Code of Conduct outlines our expectations for behavior and principles that help create a positive and respectful atmosphere.
 
 We do not tolerate harassment or bullying of any community member in any form. This applies equally to all community members, regardless of their title, seniority, background, gender, etc., across all our communication channels, including GitHub project space, emails, and in-person events.
 
