@@ -10,3 +10,5 @@
 
 ./case.build --clean-all
 
+./case.build
+
