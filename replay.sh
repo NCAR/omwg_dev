@@ -16,3 +16,9 @@ cd "${CASEDIR}"
 
 ./xmlchange NTASKS_OCN=896
 
+./case.setup --reset
+
+./pelayout
+
+./case.build
+
