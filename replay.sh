@@ -26,3 +26,5 @@ cd "${CASEDIR}"
 
 ./xmlchange DOUT_S=True
 
+./xmlchange DOUT_S=False
+
