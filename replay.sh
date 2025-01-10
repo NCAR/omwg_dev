@@ -32,3 +32,7 @@ cd "${CASEDIR}"
 
 ./xmlchange STOP_OPTION=nyears,DOUT_S=True,RESUBMIT=10
 
+./check_case
+
+./xmlchange RESUBMIT=11
+
