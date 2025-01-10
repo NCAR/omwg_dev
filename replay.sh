@@ -28,3 +28,5 @@ cd "${CASEDIR}"
 
 ./xmlchange DOUT_S=False
 
+./case.submit
+
