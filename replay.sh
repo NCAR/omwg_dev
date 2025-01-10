@@ -30,3 +30,5 @@ cd "${CASEDIR}"
 
 ./case.submit
 
+./xmlchange STOP_OPTION=nyears,DOUT_S=True,RESUBMIT=10
+
