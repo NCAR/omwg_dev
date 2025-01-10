@@ -36,3 +36,7 @@ cd "${CASEDIR}"
 
 ./xmlchange RESUBMIT=11
 
+./check_case
+
+./xmlchange PROJECT=CESM2023
+
