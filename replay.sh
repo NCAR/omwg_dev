@@ -12,3 +12,7 @@ cd "${CASEDIR}"
 
 ./case.setup
 
+./pelayout
+
+./xmlchange NTASKS_OCN=896
+
