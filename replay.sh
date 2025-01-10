@@ -24,3 +24,5 @@ cd "${CASEDIR}"
 
 ./case.build
 
+./xmlchange DOUT_S=True
+
