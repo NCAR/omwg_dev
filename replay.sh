@@ -8,3 +8,5 @@
 
 ./case.build
 
+./xmlchange RESUBMIT=3
+
