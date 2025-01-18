@@ -6,3 +6,5 @@
 
 ./case.build --clean ocn
 
+./case.build
+
