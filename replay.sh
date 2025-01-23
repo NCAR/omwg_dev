@@ -6,3 +6,5 @@
 
 ./xmlchange RESUBMIT=1
 
+./xmlchange RESUBMIT=3
+
