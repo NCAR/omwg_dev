@@ -1,0 +1,418 @@
+********
+IMPORTANT: Large deviations between Connector times on different PETs
+are typically indicators of load imbalance in the system. The following
+Connectors in this profile may indicate a load imbalance:
+	 - [MED-TO-OCN] RunPhase1
+	 - [MED-TO-WAV] RunPhase1
+	 - [OCN-TO-MED] RunPhase1
+********
+
+Region                                                                                  PETs   PEs    Count    Mean (s)    Min (s)     Min PET Max (s)     Max PET
+  [ESMF]                                                                                1280   1280   1        32805.6478  32794.9883  353     32809.9258  856    
+    [ensemble] RunPhase1                                                                1280   1280   1        32747.7659  32739.5254  170     32751.9082  0      
+      [ESM0001] RunPhase1                                                               1280   1280   1        32747.7654  32739.5254  170     32751.9082  0      
+        [OCN] RunPhase1                                                                 896    896    43800    20494.7227  20364.9746  1202    20618.4102  1279   
+        [MED-TO-OCN] RunPhase1                                                          1024   1024   43800    10684.5131  48.3062     127     12330.1143  1202   
+        [MED-TO-WAV] RunPhase1                                                          384    384    43800    20510.3082  5.8079      127     30817.0527  345    
+        [ICE] RunPhase1                                                                 128    128    43800    18056.3963  17525.2715  33      18479.8867  108    
+          cice_run_total                                                                128    128    43800    18037.9831  17508.1133  33      18461.5410  108    
+            cice_run_import                                                             128    128    43800    110.5079    88.1182     116     119.9171    42     
+              cice_imp_halo                                                             128    128    87600    53.0643     36.1021     124     62.6793     127    
+              cice_imp_t2u                                                              128    128    43800    17.9961     10.5184     108     26.8358     15     
+              cice_imp_atm                                                              128    128    43800    3.5095      2.1007      15      5.7136      116    
+              cice_imp_ocn                                                              128    128    43800    2.9695      2.5093      79      3.3589      118    
+            cice_run_export                                                             128    128    43800    45.3128     39.5367     13      52.3562     110    
+        [OCN-TO-MED] RunPhase1                                                          1024   1024   43800    1187.3475   10.0832     1152    9933.5010   33     
+        [WAV] RunPhase1                                                                 256    256    43800    1926.6159   1871.1560   345     6461.6675   382    
+        [MED] med_phases_aofluxes_run                                                   128    128    43800    2952.3933   2934.5630   1       2964.0503   105    
+          MED: (med_phases_aofluxes_run)                                                128    128    43800    2847.8696   2830.6277   1       2860.0906   105    
+            MED:(med_aofluxes_update)                                                   128    128    43800    2847.7029   2830.4915   1       2859.9529   105    
+          MED:(med_aofluxes_init)                                                       128    128    1        99.7487     99.7480     88      99.7498     0      
+        [ATM] RunPhase1                                                                 128    128    43800    930.2073    921.1983    9       987.4351    0      
+          (atm_comp_nuopc):(ModelAdvance)                                               128    128    43800    925.0501    916.2266    9       980.4850    0      
+            datm_run                                                                    128    128    43800    923.9589    915.2119    9       978.9445    0      
+              DATM_RUN                                                                  128    128    43800    923.9039    915.1619    9       978.8737    0      
+                datm_strdata_advance                                                    128    128    43800    892.2545    883.2546    17      946.7499    0      
+                  datm_strd_adv_total                                                   128    128    43800    892.1108    883.1264    17      946.5811    0      
+                    datm_strd_adv_readLBUB                                              128    128    438000   854.0032    847.6982    3       916.0298    0      
+                      datm_readLBUB_UB_readpio                                          128    128    116920   792.7689    308.0702    0       800.4020    126    
+                      datm_readLBUB_fbound                                              128    128    116920   52.7722     52.3382     0       53.2042     33     
+                      datm_readLBUB_setup                                               128    128    438000   0.2251      0.1831      31      0.3203      33     
+                      datm_readLBUB_filemgt                                             128    128    438000   0.1218      0.0516      30      7.9816      0      
+                    datm_strd_adv_tint                                                  128    128    394200   27.9302     19.9864     0       30.2082     126    
+                    datm_strd_adv_coszen                                                128    128    43800    9.3860      9.1313      117     10.3263     31     
+                      datm_strd_adv_coszenN                                             128    128    14600    4.4801      4.3838      96      5.2587      31     
+                      datm_strd_adv_coszenC                                             128    128    43800    4.2668      4.1713      111     4.4206      17     
+                datm_datamode                                                           128    128    43800    18.0461     15.7665     2       21.0582     0      
+                datm_dfield_copy                                                        128    128    43800    13.3322     10.7226     0       15.9900     116    
+        [MED] med_phases_post_atm                                                       128    128    43800    250.4963    200.3315    0       265.3673    17     
+          MED:(med_phases_post_atm)                                                     128    128    43800    243.5320    194.2255    0       257.8688    17     
+            MED:(med_phases_post_atm) map_atm2ice                                       128    128    43800    153.3741    128.6837    126     179.5819    10     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    153.2121    128.5672    126     179.4572    10     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    87600    58.7949     28.9886     126     81.4821     14     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    87600    12.0712     8.4120      111     15.6359     45     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    87600    10.0497     7.1160      4       12.3916     30     
+            MED:(med_phases_post_atm) map_atm2ocn                                       128    128    43800    67.2847     32.3189     0       93.3088     9      
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    67.1730     32.2257     0       93.1932     9      
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    87600    35.3963     7.4669      0       65.3839     9      
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    87600    10.5515     7.1977      0       12.9504     22     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    87600    8.9485      7.2401      112     9.9538      92     
+            MED:(med_phases_post_atm) map_atm2wav                                       128    128    43800    21.6552     12.9150     92      32.3222     101    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    21.5525     12.8363     92      32.2017     101    
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    43800    16.3866     8.3557      92      26.3823     13     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    43800    1.0175      0.5639      10      1.5903      56     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    43800    0.2483      0.1631      83      0.3236      25     
+            MED:(med_phases_history_write_inst_comp)                                    128    128    43800    0.0414      0.0294      66      0.0641      108    
+            MED:(med_phases_history_write_comp_aux)                                     128    128    43800    0.0356      0.0236      66      0.0604      114    
+            MED:(med_phases_history_write_comp_avg)                                     128    128    43800    0.0338      0.0251      38      0.0485      108    
+        [MED] med_phases_prep_ocn_avg                                                   128    128    43800    165.6279    160.8330    127     175.8628    126    
+          MED:(med_phases_prep_ocn_avg)                                                 128    128    43800    160.5169    156.4230    127     170.6723    126    
+        [MED] med_phases_prep_ocn_accum                                                 128    128    43800    126.8044    122.4349    109     133.8720    126    
+          MED:(med_phases_prep_ocn_accum)                                               128    128    43800    121.4087    117.1872    62      127.6932    116    
+            MED: (module_med_merge_mod: med_merge_auto)                                 128    128    43800    32.7232     29.9879     125     35.2113     14     
+            MED:(med_phases_prep_ocn_custom)                                            128    128    43800    19.8238     18.7793     45      22.1018     99     
+        [MED] med_phases_post_ice                                                       128    128    43800    100.4326    94.6685     68      118.4100    0      
+          MED:(med_phases_post_ice)                                                     128    128    43800    94.0932     88.2902     68      112.3596    0      
+            MED:(med_phases_post_ice) map_ice2ocn                                       128    128    43800    59.2697     50.7214     39      64.2061     104    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    59.1496     50.6321     39      64.0665     104    
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    43800    34.6162     30.2619     40      38.3819     95     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    43800    9.4218      7.9219      39      10.5760     24     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    43800    5.0463      3.7581      42      5.7433      60     
+            MED:(med_phases_post_ice) map_ice2wav                                       128    128    43800    18.5044     13.1657     26      27.0321     39     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    18.4225     13.0938     26      26.9619     39     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    43800    14.0791     8.7955      28      22.9689     39     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    43800    0.4316      0.2756      42      0.5491      99     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    43800    0.1271      0.0678      71      0.1749      106    
+            MED: (med_fraction_set)                                                     128    128    43800    15.3399     8.9164      68      34.2610     0      
+              MED: (med_fraction_set) fbfrac(compocn)                                   128    128    43800    14.2042     7.7287      68      32.8775     0      
+              MED: (med_fraction_set) fbfrac(compatm)                                   128    128    43800    0.1850      0.1339      99      0.2439      53     
+            MED:(med_phases_history_write_inst_comp)                                    128    128    43800    0.0400      0.0217      14      0.0602      109    
+            MED:(med_phases_history_write_comp_avg)                                     128    128    43800    0.0388      0.0194      15      0.0532      102    
+            MED:(med_phases_history_write_comp_aux)                                     128    128    43800    0.0377      0.0187      14      0.0664      114    
+        [ROF] RunPhase1                                                                 128    128    43800    92.3675     70.3251     96      122.4745    23     
+          DROF_RUN                                                                      128    128    43800    86.3816     64.8826     96      115.8525    23     
+            drof_strdata_advance                                                        128    128    43800    82.1057     60.7880     96      111.3921    23     
+              drof_strd_adv_total                                                       128    128    43800    81.9153     60.6188     96      111.1435    23     
+                drof_strd_adv_readLBUB                                                  128    128    43800    78.8412     57.9058     96      107.7001    23     
+                  drof_readLBUB_UB_readpio                                              128    128    1825     64.4338     43.6139     96      93.1295     23     
+                  drof_readLBUB_fbound                                                  128    128    1825     14.0512     13.9651     90      14.1803     13     
+                  drof_readLBUB_setup                                                   128    128    43800    0.0567      0.0476      8       0.0697      49     
+                  drof_readLBUB_filemgt                                                 128    128    43800    0.0111      0.0075      92      0.2409      0      
+                drof_strd_adv_tint                                                      128    128    43800    2.8387      2.3253      2       3.4191      27     
+            drof_datamode                                                               128    128    43800    2.7510      2.5701      126     2.9540      29     
+            drof_dfield_copy                                                            128    128    43800    1.3834      1.2167      0       1.6161      21     
+        [MED] med_phases_post_ocn                                                       128    128    43800    83.9240     72.6086     3       107.0899    111    
+          MED:(med_phases_post_ocn)                                                     128    128    43800    73.9093     62.8577     3       96.8149     111    
+            MED:(med_phases_post_ocn) map_ocn2ice                                       128    128    43800    54.9097     43.2970     117     78.7638     111    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    54.5824     42.9734     117     78.4247     111    
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    43800    41.3861     31.7519     117     65.4731     111    
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    43800    3.9786      3.1846      104     4.6922      34     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    43800    3.0636      1.7701      117     3.8801      10     
+            MED:(med_phases_post_ocn) map_ocn2wav                                       128    128    43800    17.7681     12.5078     95      28.6602     117    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    17.6517     12.3809     95      28.5681     117    
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    43800    11.8913     6.7556      95      23.7957     117    
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    43800    1.7727      1.1295      117     2.2433      10     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    43800    0.3553      0.2968      102     0.4220      117    
+            MED:(med_phases_history_write_comp_aux)                                     128    128    43800    0.0578      0.0408      117     0.0741      24     
+            MED:(med_phases_history_write_inst_comp)                                    128    128    43800    0.0457      0.0305      13      0.0561      47     
+            MED:(med_phases_history_write_comp_avg)                                     128    128    43800    0.0398      0.0319      38      0.0503      24     
+        [MED] med_phases_prep_ice                                                       128    128    43800    65.8540     57.1213     112     70.7202     44     
+          MED:(med_phases_prep_ice)                                                     128    128    43800    61.4426     53.0332     112     66.1481     44     
+            MED: (module_med_merge_mod: med_merge_auto)                                 128    128    43800    28.0503     19.7425     112     32.6589     35     
+        [ICE-TO-MED] RunPhase1                                                          128    128    43800    59.2728     43.3525     0       63.6954     91     
+        [MED-TO-ICE] RunPhase1                                                          128    128    43800    46.5362     34.9012     127     57.1462     112    
+        [MED] med_phases_post_rof                                                       128    128    43800    36.2493     22.4168     21      66.2219     122    
+          MED:(med_phases_post_rof)                                                     128    128    43800    31.5798     17.9184     24      61.9015     122    
+            MED:(med_phases_post_rof) map_rof2ocn                                       128    128    43800    18.3420     7.8184      21      49.2409     122    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    18.2726     7.7575      21      49.1783     122    
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    87600    9.8511      0.4393      19      40.1351     122    
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    87600    2.6554      1.7458      17      3.9492      118    
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    87600    0.7755      0.3629      19      1.6373      4      
+            MED:(med_phases_post_rof_mod: med_phases_post_rof_remove_negative_runoff)   128    128    87600    10.5998     5.9856      47      15.4222     51     
+            MED:(med_phases_post_rof) map_rof2ice                                       128    128    43800    0.3085      0.1856      107     0.6486      4      
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    43800    0.2543      0.1516      107     0.5235      4      
+            MED:(med_phases_history_write_comp_aux)                                     128    128    43800    0.0278      0.0161      108     0.0520      8      
+            MED:(med_phases_history_write_inst_comp)                                    128    128    43800    0.0271      0.0163      107     0.0630      7      
+            MED:(med_phases_history_write_comp_avg)                                     128    128    43800    0.0251      0.0127      110     0.0533      11     
+        [ATM-TO-MED] RunPhase1                                                          128    128    43800    35.7895     26.8051     0       40.8733     116    
+        [MED] med_phases_post_wav                                                       128    128    43800    30.7516     26.4196     51      36.6855     1      
+          MED:(med_phases_post_wav)                                                     128    128    43800    25.7092     21.4367     51      31.9434     1      
+            MED: (med_map_mod:med_map_field_packed)                                     128    128    87600    25.1361     20.8312     52      31.3824     1      
+              MED: (med_map_mod:med_map_field_packed) map                               128    128    43800    18.6804     13.9064     52      25.8795     1      
+              MED: (med_map_mod:med_map_field_packed) copy to dest                      128    128    43800    2.0460      1.5125      49      2.4062      34     
+              MED: (med_map_mod:med_map_field_packed) copy from src                     128    128    43800    0.3274      0.2654      105     0.3791      12     
+            MED:(med_phases_history_write_comp_aux)                                     128    128    43800    0.0361      0.0237      106     0.0626      16     
+            MED:(med_phases_history_write_inst_comp)                                    128    128    43800    0.0329      0.0235      48      0.0529      26     
+            MED:(med_phases_history_write_comp_avg)                                     128    128    43800    0.0311      0.0211      110     0.0545      18     
+        [MED] med_phases_prep_wav_avg                                                   128    128    43800    27.3031     26.2864     75      29.1597     126    
+          MED:(med_phases_prep_wav_avg)                                                 128    128    43800    23.1287     22.4167     74      25.1033     126    
+        [WAV-TO-MED] RunPhase1                                                          384    384    43800    6.6031      5.2383      383     8.6613      34     
+        [ROF-TO-MED] RunPhase1                                                          128    128    43800    18.4134     15.3720     51      20.8226     24     
+        [MED] med_phases_prep_wav_accum                                                 128    128    43800    16.6170     15.5737     111     17.2976     124    
+          MED:(med_phases_prep_wav_accum)                                               128    128    43800    11.9105     11.1957     111     12.7376     124    
+            MED: (module_med_merge_mod: med_merge_auto)                                 128    128    43800    2.3769      2.0002      111     2.5595      96     
+        [MED] med_phases_ocnalb_run                                                     128    128    43800    10.5283     7.4804      65      27.6060     127    
+          MED:(med_phases_ocnalb_run)                                                   128    128    43800    5.4185      2.3707      65      22.3670     127    
+        [MED] med_phases_diag_ice_ice2med                                               128    128    43800    9.9453      9.5933      121     11.0449     59     
+          MED:(med_phases_diag_ice_ice2med)                                             128    128    43800    6.3170      6.1492      121     7.3431      59     
+        [MED] med_phases_diag_atm                                                       128    128    43800    9.5718      8.1600      2       10.1747     61     
+          MED:(med_phases_diag_atm)                                                     128    128    43800    4.5598      3.8101      1       4.9371      61     
+        [MED] med_phases_diag_ocn                                                       128    128    43800    9.1947      8.2501      105     10.0618     24     
+          MED:(med_phases_diag_ocn)                                                     128    128    43800    4.7934      4.2975      105     5.6679      126    
+        [MED] med_phases_diag_rof                                                       128    128    43800    7.5301      6.5827      0       8.4327      110    
+          MED:(med_phases_diag_rof)                                                     128    128    43800    2.6994      2.1839      39      3.1399      68     
+        [MED] med_phases_diag_ice_med2ice                                               128    128    43800    6.2631      5.7577      2       6.6817      59     
+          MED:(med_phases_diag_ice_med2ice)                                             128    128    43800    2.7492      2.4252      5       3.1294      59     
+        [MED] med_phases_restart_write                                                  128    128    43800    6.0341      5.8790      8       6.2122      80     
+          MED:(med_phases_restart_write)                                                128    128    43800    3.0150      2.9645      107     3.1174      80     
+        [MED] med_phases_diag_accum                                                     128    128    43800    3.6341      3.3805      17      5.2241      15     
+          MED:(med_diag_accum)                                                          128    128    43800    0.1385      0.0913      110     0.5219      15     
+        [MED] med_phases_profile                                                        128    128    43800    3.4133      3.2569      8       3.8819      0      
+          MED:(med_phases_profile)                                                      128    128    43800    0.4815      0.4385      27      0.9715      0      
+        [MED] med_phases_diag_print                                                     128    128    43800    3.2326      3.0642      119     3.5599      15     
+          MED:(med_diag_sum_main)                                                       128    128    60       0.0451      0.0071      122     0.0675      32     
+          MED:(med_diag_print_summary)                                                  1      1      70       0.2099      0.2099      0       0.2099      0      
+        [MED] med_phases_history_write                                                  128    128    43800    3.2210      3.0646      8       3.3503      93     
+          MED:(med_phases_history_write)                                                128    128    43800    0.0494      0.0419      31      0.0603      32     
+    [ensemble] Init 1                                                                   1280   1280   1        45.0469     45.0399     127     45.0516     1115   
+      [ESM0001] IPDv02p3                                                                1280   1280   1        30.0073     29.9642     937     30.1076     51     
+        [ATM] IPDv01p3                                                                  128    128    1        13.5817     13.5782     65      13.5844     101    
+          datm_strdata_init                                                             128    128    1        12.4010     12.4006     30      12.4017     0      
+          DATM_RUN                                                                      128    128    1        1.1683      1.1632      5       1.1729      70     
+            datm_strdata_advance                                                        128    128    1        0.9379      0.9350      36      0.9407      10     
+              datm_strd_adv_total                                                       128    128    1        0.9370      0.9339      3       0.9401      58     
+                datm_strd_adv_readLBUB                                                  128    128    10       0.9325      0.9317      21      0.9338      43     
+                  datm_readLBUB_LB_readpio                                              128    128    10       0.2446      0.2428      3       0.2596      0      
+                  datm_readLBUB_UB_readpio                                              128    128    10       0.1861      0.1859      57      0.1896      0      
+                  datm_readLBUB_fbound                                                  128    128    10       0.0001      0.0000      124     0.0008      97     
+                  datm_readLBUB_filemgt                                                 128    128    10       0.0001      0.0000      83      0.0066      0      
+                  datm_readLBUB_setup                                                   128    128    10       0.0000      0.0000      110     0.0000      40     
+                datm_strd_adv_coszen                                                    128    128    1        0.0018      0.0004      73      0.0040      112    
+                  datm_strd_adv_coszenN                                                 128    128    1        0.0011      0.0003      78      0.0024      97     
+                  datm_strd_adv_coszenC                                                 128    128    1        0.0007      0.0001      73      0.0018      14     
+                datm_strd_adv_tint                                                      128    128    9        0.0011      0.0002      87      0.0025      76     
+            datm_datamode                                                               128    128    1        0.0005      0.0003      74      0.0010      6      
+            datm_dfield_copy                                                            128    128    1        0.0003      0.0001      121     0.0009      72     
+        [ROF] IPDv01p3                                                                  128    128    1        10.4762     10.4744     32      10.4862     0      
+          drof_strdata_init                                                             128    128    1        10.0617     10.0593     7       10.0733     0      
+          DROF_RUN                                                                      128    128    1        0.4132      0.4091      1       0.4149      127    
+            drof_strdata_advance                                                        128    128    1        0.3498      0.3494      34      0.3612      0      
+              drof_strd_adv_total                                                       128    128    1        0.3498      0.3494      34      0.3612      0      
+                drof_strd_adv_readLBUB                                                  128    128    1        0.3497      0.3494      34      0.3612      0      
+                  drof_readLBUB_LB_readpio                                              128    128    1        0.1539      0.1527      1       0.1650      0      
+                  drof_readLBUB_UB_readpio                                              128    128    1        0.0152      0.0148      34      0.0256      0      
+                  drof_readLBUB_filemgt                                                 128    128    1        0.0000      0.0000      83      0.0011      0      
+                  drof_readLBUB_fbound                                                  128    128    1        0.0000      0.0000      3       0.0000      102    
+                  drof_readLBUB_setup                                                   128    128    1        0.0000      0.0000      82      0.0000      37     
+                drof_strd_adv_tint                                                      128    128    1        0.0001      0.0000      0       0.0002      11     
+            drof_datamode                                                               128    128    1        0.0001      0.0001      21      0.0001      34     
+            drof_dfield_copy                                                            128    128    1        0.0000      0.0000      86      0.0001      51     
+        [OCN-TO-MED] IPDv05p5                                                           1024   1024   1        0.4418      0.2174      19      0.4749      862    
+        [MED-TO-OCN] IPDv05p5                                                           1024   1024   1        0.3755      0.3008      123     0.3890      699    
+        [ICE] IPDv01p3                                                                  128    128    1        2.7765      2.7713      71      2.7808      18     
+          cice_init2                                                                    128    128    1        2.7212      2.7064      60      2.7509      126    
+        [OCN-TO-MED] IPDv05p6a                                                          1024   1024   1        0.3314      0.1955      5       0.3522      421    
+        [MED-TO-OCN] IPDv05p6b                                                          1024   1024   1        0.3233      0.1681      104     0.3469      1032   
+        [OCN-TO-MED] IPDv05p4                                                           1024   1024   1        0.3094      0.1536      44      0.3329      1010   
+        [WAV] IPDv01p3                                                                  256    256    1        1.1465      1.1415      233     1.1518      278    
+        [MED-TO-OCN] IPDv05p4                                                           1024   1024   1        0.2535      0.2126      85      0.2641      1227   
+        [MED-TO-OCN] IPDv05p6a                                                          1024   1024   1        0.2423      0.2063      9       0.2501      1071   
+        [OCN-TO-MED] IPDv05p6b                                                          1024   1024   1        0.2349      0.0857      21      0.2562      564    
+        [OCN] IPDv03p3                                                                  896    896    1        0.2670      0.2667      939     0.2673      1162   
+        [WAV-TO-MED] IPDv05p5                                                           384    384    1        0.4212      0.0914      36      0.5863      139    
+        [MED-TO-WAV] IPDv05p5                                                           384    384    1        0.3431      0.0846      37      0.4718      308    
+        [WAV-TO-MED] IPDv05p6a                                                          384    384    1        0.2878      0.0857      9       0.3890      189    
+        [WAV-TO-MED] IPDv05p4                                                           384    384    1        0.2683      0.0741      120     0.3657      157    
+        [MED-TO-WAV] IPDv05p6a                                                          384    384    1        0.2438      0.0788      110     0.3287      231    
+        [MED-TO-WAV] IPDv05p4                                                           384    384    1        0.2431      0.0674      102     0.3299      326    
+        [WAV-TO-MED] IPDv05p6b                                                          384    384    1        0.2386      0.0540      48      0.3309      165    
+        [MED-TO-WAV] IPDv05p6b                                                          384    384    1        0.2192      0.0668      73      0.2959      264    
+        [MED] IPDv03p4                                                                  128    128    1        0.1292      0.1287      47      0.1296      114    
+        [ICE-TO-MED] IPDv05p5                                                           128    128    1        0.1092      0.1084      123     0.1105      19     
+        [ROF-TO-MED] IPDv05p5                                                           128    128    1        0.1062      0.1060      58      0.1065      6      
+        [ROF-TO-MED] IPDv05p6b                                                          128    128    1        0.0874      0.0874      45      0.0874      114    
+        [MED-TO-ICE] IPDv05p5                                                           128    128    1        0.0834      0.0831      13      0.0837      108    
+        [ICE-TO-MED] IPDv05p6b                                                          128    128    1        0.0807      0.0807      83      0.0807      103    
+        [ICE-TO-MED] IPDv05p4                                                           128    128    1        0.0752      0.0741      65      0.0764      102    
+        [ATM-TO-MED] IPDv05p5                                                           128    128    1        0.0604      0.0603      65      0.0607      4      
+        [MED-TO-ICE] IPDv05p6b                                                          128    128    1        0.0601      0.0596      90      0.0606      5      
+        [MED-TO-ICE] IPDv05p4                                                           128    128    1        0.0460      0.0454      93      0.0466      102    
+        [MED-TO-ICE] IPDv05p6a                                                          128    128    1        0.0397      0.0395      9       0.0399      72     
+        [ICE-TO-MED] IPDv05p6a                                                          128    128    1        0.0379      0.0371      5       0.0380      38     
+        [ATM-TO-MED] IPDv05p6a                                                          128    128    1        0.0373      0.0356      4       0.0383      5      
+        [ATM-TO-MED] IPDv05p4                                                           128    128    1        0.0310      0.0306      98      0.0315      102    
+        [ROF-TO-MED] IPDv05p6a                                                          128    128    1        0.0305      0.0298      66      0.0316      5      
+        [ROF-TO-MED] IPDv05p4                                                           128    128    1        0.0299      0.0292      33      0.0302      120    
+        [MED] IPDv03p5                                                                  128    128    1        0.0239      0.0207      16      0.0261      93     
+        [ATM-TO-MED] IPDv05p6b                                                          128    128    1        0.0229      0.0229      51      0.0229      101    
+        [MED] IPDv03p3                                                                  128    128    1        0.0051      0.0043      41      0.0057      44     
+        [ESM0001] IPDv05p4                                                              1280   1280   1        0.0005      0.0001      134     0.0015      1266   
+        [ESM0001] IPDv05p6                                                              1280   1280   1        0.0003      0.0000      64      0.0006      975    
+        [OCN] IPDv03p6                                                                  896    896    1        0.0003      0.0003      802     0.0006      924    
+        [WAV] IPDv01p4                                                                  256    256    1        0.0006      0.0003      230     0.0009      368    
+        [ATM] IPDv01p4                                                                  128    128    1        0.0007      0.0004      127     0.0011      39     
+        [MED] IPDv03p6                                                                  128    128    1        0.0005      0.0004      0       0.0005      85     
+        [ICE] IPDv01p4                                                                  128    128    1        0.0002      0.0002      74      0.0002      64     
+        [ROF] IPDv01p4                                                                  128    128    1        0.0001      0.0000      22      0.0001      110    
+      [ESM0001] IPDv02p1                                                                1280   1280   1        8.0655      8.0395      949     8.1253      200    
+        [OCN] IPDv03p1                                                                  896    896    1        5.5951      5.5926      1175    5.5970      696    
+        [MED-TO-OCN] IPDv05p3                                                           1024   1024   1        0.4355      0.2955      94      0.4569      903    
+        [OCN-TO-MED] IPDv05p3                                                           1024   1024   1        0.3121      0.1415      44      0.3370      1268   
+        [MED-TO-OCN] IPDv05p2a                                                          1024   1024   1        0.3008      0.2060      9       0.3200      1061   
+        [OCN-TO-MED] IPDv05p1                                                           1024   1024   1        0.2339      0.1315      8       0.2496      386    
+        [MED-TO-OCN] IPDv05p1                                                           1024   1024   1        0.2307      0.2022      17      0.2358      1132   
+        [MED-TO-OCN] IPDv05p2b                                                          1024   1024   1        0.2297      0.1361      21      0.2441      1178   
+        [OCN-TO-MED] IPDv05p2a                                                          1024   1024   1        0.2173      0.1168      65      0.2325      1233   
+        [OCN-TO-MED] IPDv05p2b                                                          1024   1024   1        0.2103      0.1122      8       0.2258      944    
+        [MED-TO-WAV] IPDv05p3                                                           384    384    1        0.3197      0.0664      22      0.4471      275    
+        [ICE] IPDv01p1                                                                  128    128    1        0.9575      0.9553      19      0.9597      49     
+          cice_init_total                                                               128    128    1        0.9541      0.9520      125     0.9561      107    
+            cice_init1                                                                  128    128    1        0.1434      0.1325      9       0.1535      5      
+        [WAV-TO-MED] IPDv05p3                                                           384    384    1        0.2551      0.0578      91      0.3539      189    
+        [MED-TO-WAV] IPDv05p1                                                           384    384    1        0.2280      0.0708      107     0.3066      252    
+        [MED-TO-WAV] IPDv05p2a                                                          384    384    1        0.2200      0.0627      63      0.2985      161    
+        [WAV-TO-MED] IPDv05p1                                                           384    384    1        0.1908      0.0583      65      0.2572      145    
+        [WAV-TO-MED] IPDv05p2a                                                          384    384    1        0.1826      0.0558      65      0.2462      305    
+        [WAV-TO-MED] IPDv05p2b                                                          384    384    1        0.1783      0.0552      5       0.2401      147    
+        [MED-TO-WAV] IPDv05p2b                                                          384    384    1        0.1707      0.0573      46      0.2261      205    
+        [ICE-TO-MED] IPDv05p3                                                           128    128    1        0.0921      0.0920      86      0.0922      19     
+        [MED-TO-ICE] IPDv05p3                                                           128    128    1        0.0824      0.0817      21      0.0832      9      
+        [MED] IPDv03p1                                                                  128    128    1        0.0785      0.0750      3       0.0837      34     
+        [ATM-TO-MED] IPDv05p3                                                           128    128    1        0.0361      0.0361      48      0.0362      86     
+        [MED-TO-ICE] IPDv05p1                                                           128    128    1        0.0306      0.0300      44      0.0310      110    
+        [MED-TO-ICE] IPDv05p2b                                                          128    128    1        0.0274      0.0268      34      0.0280      97     
+        [MED-TO-ICE] IPDv05p2a                                                          128    128    1        0.0272      0.0268      18      0.0278      66     
+        [ROF-TO-MED] IPDv05p3                                                           128    128    1        0.0260      0.0256      123     0.0262      91     
+        [ICE-TO-MED] IPDv05p2b                                                          128    128    1        0.0255      0.0254      0       0.0256      110    
+        [ICE-TO-MED] IPDv05p2a                                                          128    128    1        0.0255      0.0253      61      0.0261      121    
+        [ATM-TO-MED] IPDv05p2a                                                          128    128    1        0.0247      0.0244      101     0.0251      66     
+        [ATM-TO-MED] IPDv05p2b                                                          128    128    1        0.0246      0.0243      41      0.0249      4      
+        [ICE-TO-MED] IPDv05p1                                                           128    128    1        0.0226      0.0225      81      0.0227      0      
+        [ATM-TO-MED] IPDv05p1                                                           128    128    1        0.0222      0.0218      41      0.0225      9      
+        [ROF-TO-MED] IPDv05p2a                                                          128    128    1        0.0214      0.0200      40      0.0226      65     
+        [ROF-TO-MED] IPDv05p2b                                                          128    128    1        0.0205      0.0200      110     0.0217      9      
+        [ROF-TO-MED] IPDv05p1                                                           128    128    1        0.0205      0.0196      69      0.0218      9      
+        [ATM] IPDv01p1                                                                  128    128    1        0.0119      0.0103      98      0.0131      73     
+        [OCN] Init 0                                                                    896    896    1        0.0014      0.0003      1093    0.0023      946    
+        [WAV] IPDv01p1                                                                  256    256    1        0.0044      0.0032      186     0.0054      315    
+        [ROF] IPDv01p1                                                                  128    128    1        0.0041      0.0029      32      0.0055      12     
+        [ESM0001] IPDv05p3                                                              1280   1280   1        0.0003      0.0002      203     0.0006      12     
+        [ESM0001] IPDv03p2                                                              1280   1280   1        0.0003      0.0002      196     0.0012      27     
+        [MED] Init 0                                                                    128    128    1        0.0011      0.0002      79      0.0040      0      
+        [MED-TO-OCN] Init 0                                                             1024   1024   1        0.0001      0.0001      13      0.0003      1159   
+        [OCN-TO-MED] Init 0                                                             1024   1024   1        0.0001      0.0001      115     0.0001      488    
+        [ESM0001] IPDv05p2                                                              1280   1280   1        0.0001      0.0001      1234    0.0003      123    
+        [MED-TO-WAV] Init 0                                                             384    384    1        0.0001      0.0001      47      0.0002      191    
+        [WAV-TO-MED] Init 0                                                             384    384    1        0.0001      0.0001      70      0.0001      278    
+        [WAV] Init 0                                                                    256    256    1        0.0001      0.0001      155     0.0002      189    
+        [MED-TO-ICE] Init 0                                                             128    128    1        0.0001      0.0001      2       0.0002      8      
+        [ATM] Init 0                                                                    128    128    1        0.0001      0.0001      13      0.0003      10     
+        [ROF-TO-MED] Init 0                                                             128    128    1        0.0001      0.0001      123     0.0001      9      
+        [ICE-TO-MED] Init 0                                                             128    128    1        0.0001      0.0001      16      0.0001      45     
+        [ATM-TO-MED] Init 0                                                             128    128    1        0.0001      0.0001      84      0.0001      126    
+        [ICE] Init 0                                                                    128    128    1        0.0001      0.0001      99      0.0005      2      
+        [ROF] Init 0                                                                    128    128    1        0.0001      0.0001      51      0.0001      0      
+        [ESM0001] IPDv05p1                                                              1280   1280   1        0.0000      0.0000      353     0.0000      971    
+      [ESM0001] IPDv02p5                                                                1280   1280   1        6.7072      6.7067      406     6.7077      3      
+        [MED] IPDv03p7                                                                  128    128    2        6.6882      6.6862      11      6.6949      0      
+          MED: (med_map_mod: RouteHandles_init)                                         128    128    1        4.7490      4.7459      28      4.7536      79     
+          MED:(med_phases_restart_read)                                                 128    128    1        1.8286      1.8269      125     1.8308      2      
+          MED:(med_phases_post_atm)                                                     128    128    1        0.0070      0.0065      101     0.0080      3      
+            MED:(med_phases_post_atm) map_atm2ice                                       128    128    1        0.0040      0.0033      126     0.0047      59     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0040      0.0033      126     0.0047      59     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    2        0.0016      0.0008      126     0.0024      59     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    2        0.0003      0.0001      14      0.0004      89     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    2        0.0002      0.0001      125     0.0003      95     
+            MED:(med_phases_post_atm) map_atm2ocn                                       128    128    1        0.0026      0.0018      2       0.0039      27     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0022      0.0010      0       0.0039      27     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    2        0.0013      0.0002      0       0.0030      27     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    2        0.0004      0.0001      91      0.0009      18     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    2        0.0002      0.0001      9       0.0003      31     
+            MED:(med_phases_post_atm) map_atm2wav                                       128    128    1        0.0004      0.0002      45      0.0007      56     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0004      0.0002      45      0.0007      56     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    1        0.0003      0.0001      45      0.0006      22     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    1        0.0000      0.0000      49      0.0001      125    
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    1        0.0000      0.0000      89      0.0000      52     
+          MED:(med_phases_post_rof)                                                     128    128    1        0.0027      0.0024      19      0.0035      122    
+            MED:(med_phases_post_rof_mod: med_phases_post_rof_remove_negative_runoff)   128    128    2        0.0014      0.0011      26      0.0023      85     
+            MED:(med_phases_post_rof) map_rof2ocn                                       128    128    1        0.0004      0.0002      21      0.0012      122    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0004      0.0002      21      0.0012      122    
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    2        0.0002      0.0000      21      0.0010      122    
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    2        0.0001      0.0000      17      0.0001      118    
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    2        0.0000      0.0000      19      0.0000      116    
+            MED:(med_phases_post_rof) map_rof2ice                                       128    128    1        0.0000      0.0000      25      0.0000      119    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0000      0.0000      25      0.0000      119    
+          MED:(med_phases_post_ice)                                                     128    128    1        0.0026      0.0023      49      0.0036      120    
+            MED:(med_phases_post_ice) map_ice2ocn                                       128    128    1        0.0017      0.0014      64      0.0019      82     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0017      0.0014      64      0.0019      82     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    1        0.0012      0.0009      109     0.0014      82     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    1        0.0002      0.0002      81      0.0003      57     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    1        0.0001      0.0001      15      0.0001      14     
+            MED: (med_fraction_set)                                                     128    128    1        0.0005      0.0002      70      0.0016      85     
+              MED: (med_fraction_set) fbfrac(compocn)                                   128    128    1        0.0005      0.0002      70      0.0015      85     
+              MED: (med_fraction_set) fbfrac(compatm)                                   128    128    1        0.0000      0.0000      57      0.0000      113    
+            MED:(med_phases_post_ice) map_ice2wav                                       128    128    1        0.0004      0.0002      26      0.0007      122    
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0004      0.0002      26      0.0007      122    
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    1        0.0003      0.0001      26      0.0006      122    
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    1        0.0000      0.0000      102     0.0000      48     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    1        0.0000      0.0000      15      0.0000      121    
+          MED: (med_fraction_init)                                                      128    128    1        0.0018      0.0017      93      0.0027      88     
+          MED:(med_phases_ocnalb_run)                                                   128    128    1        0.0017      0.0007      108     0.0035      95     
+            MED:(med_phases_ocnalb_init)                                                128    128    1        0.0003      0.0002      86      0.0020      64     
+          MED:(med_phases_post_ocn)                                                     128    128    1        0.0014      0.0010      84      0.0026      71     
+            MED:(med_phases_post_ocn) map_ocn2ice                                       128    128    1        0.0011      0.0007      112     0.0022      66     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0009      0.0005      59      0.0021      66     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    1        0.0008      0.0004      8       0.0020      66     
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    1        0.0000      0.0000      60      0.0001      121    
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    1        0.0000      0.0000      46      0.0001      116    
+            MED:(med_phases_post_ocn) map_ocn2wav                                       128    128    1        0.0003      0.0002      57      0.0005      76     
+              MED: (med_map_mod:med_map_field_packed)                                   128    128    1        0.0003      0.0002      57      0.0005      76     
+                MED: (med_map_mod:med_map_field_packed) map                             128    128    1        0.0002      0.0001      125     0.0004      76     
+                MED: (med_map_mod:med_map_field_packed) copy from src                   128    128    1        0.0000      0.0000      49      0.0000      112    
+                MED: (med_map_mod:med_map_field_packed) copy to dest                    128    128    1        0.0000      0.0000      105     0.0000      112    
+          MED: (med_fraction_set)                                                       128    128    1        0.0012      0.0002      60      0.0066      0      
+            MED: (med_fraction_set) fbfrac(compocn)                                     128    128    1        0.0012      0.0001      60      0.0066      0      
+            MED: (med_fraction_set) fbfrac(compatm)                                     128    128    1        0.0000      0.0000      0       0.0000      14     
+          MED:(med_phases_post_wav)                                                     128    128    1        0.0011      0.0003      122     0.0014      21     
+            MED: (med_map_mod:med_map_field_packed)                                     128    128    2        0.0011      0.0003      122     0.0014      21     
+              MED: (med_map_mod:med_map_field_packed) map                               128    128    1        0.0010      0.0002      122     0.0013      21     
+              MED: (med_map_mod:med_map_field_packed) copy to dest                      128    128    1        0.0000      0.0000      48      0.0001      45     
+              MED: (med_map_mod:med_map_field_packed) copy from src                     128    128    1        0.0000      0.0000      122     0.0000      7      
+          MED:(med_phases_post_rof_init)                                                128    128    1        0.0002      0.0002      22      0.0004      39     
+            MED:(med_phases_post_rof_mod: med_phases_post_rof_create_rof_field_bundle)  128    128    1        0.0002      0.0001      22      0.0003      39     
+          MED:(med_phases_profile)                                                      128    128    1        0.0002      0.0001      49      0.0002      67     
+        [OCN] IPDv03p7                                                                  896    896    1        0.0034      0.0021      416     0.0042      1072   
+        [OCN-TO-MED] RunPhase1                                                          1024   1024   1        0.0022      0.0004      960     0.0072      10     
+        [WAV-TO-MED] RunPhase1                                                          384    384    1        0.0015      0.0001      10      0.0024      3      
+        [ATM-TO-MED] RunPhase1                                                          128    128    1        0.0016      0.0011      91      0.0020      20     
+        [ICE-TO-MED] RunPhase1                                                          128    128    1        0.0014      0.0009      0       0.0021      81     
+        [WAV] IPDv01p5                                                                  256    256    1        0.0005      0.0001      344     0.0011      159    
+        [ESM0001] IPDv05p8                                                              1280   1280   1        0.0000      0.0000      1010    0.0001      946    
+        [ROF-TO-MED] RunPhase1                                                          128    128    1        0.0002      0.0001      3       0.0002      23     
+        [ATM] IPDv01p5                                                                  128    128    1        0.0001      0.0001      41      0.0002      0      
+        [ICE] IPDv01p5                                                                  128    128    1        0.0001      0.0001      41      0.0001      55     
+        [ROF] IPDv01p5                                                                  128    128    1        0.0001      0.0001      75      0.0001      29     
+      (ensemble_driver.F90:SetModelServices)                                            1280   1280   1        0.0790      0.0755      303     0.0832      924    
+      [ensemble] IPDv05p1                                                               1280   1280   1        0.0005      0.0001      959     0.0021      1015   
+      [ESM0001] Init 0                                                                  1280   1280   1        0.0001      0.0001      865     0.0001      1039   
+      [ensemble] IPDv05p3                                                               1280   1280   1        0.0000      0.0000      240     0.0001      1060   
+      [ensemble] IPDv05p4                                                               1280   1280   1        0.0000      0.0000      283     0.0001      321    
+      [ensemble] IPDv05p2                                                               1280   1280   1        0.0000      0.0000      212     0.0001      258    
+      [ensemble] IPDv05p8                                                               1280   1280   1        0.0000      0.0000      116     0.0001      512    
+      [ensemble] IPDv05p6                                                               1280   1280   1        0.0000      0.0000      275     0.0000      488    
+    [ensemble] FinalizePhase1                                                           1280   1280   1        12.7021     0.0199      35      15.2460     831    
+      [ESM0001] FinalizePhase1                                                          1280   1280   1        12.6878     0.0189      50      15.2263     827    
+        [OCN] FinalizePhase1                                                            896    896    1        15.1704     15.1643     951     15.1798     845    
+        [MED-TO-WAV] FinalizePhase1                                                     384    384    1        0.0009      0.0001      27      0.0022      215    
+        [MED-TO-OCN] FinalizePhase1                                                     1024   1024   1        0.0002      0.0001      125     0.0005      1160   
+        [MED-TO-ICE] FinalizePhase1                                                     128    128    1        0.0016      0.0013      104     0.0020      18     
+        [OCN-TO-MED] FinalizePhase1                                                     1024   1024   1        0.0001      0.0001      43      0.0002      1173   
+        [MED] FinalizePhase1                                                            128    128    1        0.0006      0.0001      90      0.0014      64     
+        [WAV-TO-MED] FinalizePhase1                                                     384    384    1        0.0001      0.0001      17      0.0002      294    
+        [ATM] FinalizePhase1                                                            128    128    1        0.0003      0.0000      75      0.0012      9      
+        [ICE-TO-MED] FinalizePhase1                                                     128    128    1        0.0001      0.0001      73      0.0002      76     
+        [WAV] FinalizePhase1                                                            256    256    1        0.0001      0.0001      146     0.0001      276    
+        [ATM-TO-MED] FinalizePhase1                                                     128    128    1        0.0001      0.0001      78      0.0001      101    
+        [ROF-TO-MED] FinalizePhase1                                                     128    128    1        0.0001      0.0001      6       0.0001      101    
+        [ICE] FinalizePhase1                                                            128    128    1        0.0000      0.0000      17      0.0001      5      
+        [ROF] FinalizePhase1                                                            128    128    1        0.0000      0.0000      75      0.0001      0      
