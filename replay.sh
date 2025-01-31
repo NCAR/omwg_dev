@@ -6,3 +6,5 @@
 
 ./xmlchange RESUBMIT=3
 
+./xmlchange PROJECT=CESM0023
+
