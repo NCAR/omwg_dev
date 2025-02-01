@@ -14,3 +14,5 @@
 
 ./xmlchange RESUBMIT=3,CONTINUE_RUN=False
 
+./case.submit
+
