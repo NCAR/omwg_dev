@@ -16,3 +16,5 @@
 
 ./xmlchange REST_N=1,REST_OPTION=nmonths
 
+./xmlchange RESUBMIT=4
+
