@@ -14,3 +14,5 @@
 
 ./case.submit
 
+./xmlchange REST_N=1,REST_OPTION=nmonths
+
