@@ -16,3 +16,7 @@ cd "${CASEDIR}"
 
 ./case.build
 
+./pelayout
+
+./xmlchange STOP_OPTION=nyears,RESUBMIT=3
+
