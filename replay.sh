@@ -18,3 +18,5 @@ cd "${CASEDIR}"
 
 ./xmlchange PROJECT=CESM0023,STOP_OPTION=nyears,RESUBMIT=3
 
+./case.submit
+
