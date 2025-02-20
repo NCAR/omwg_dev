@@ -20,4 +20,23 @@
 ! Parameters:
 !---------------------------------------------------------------------
 
+INPUTDIR = "INPUT"
+MAXTRUNC = 2000
+REMAPPING_USE_OM4_SUBCELLS = False
 
+KPP%
+KPP_CVt2 = 1.0
+#override STOKES_MOST = False
+USE_KPP_LT_K = True
+USE_KPP_LT_VT2 = True
+%KPP
+
+#override WAVE_METHOD = EFACTOR
+#override STOKES_DDT = False
+#override STOKES_VF = False
+#override STOKES_PGF = False
+#override FPMIX = False
+
+ALE_COORDINATE_CONFIG = "HYBRID:hybrid_75layer_zstar2.50m-2025-02-14.nc,sigma2,dz"
+MAX_LAYER_THICKNESS_CONFIG = "FILE:dz_max.nc,dz"
+MAXIMUM_INT_DEPTH_CONFIG = "FILE:lev.nc,Z"
