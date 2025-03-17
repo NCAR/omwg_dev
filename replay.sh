@@ -44,3 +44,5 @@ cd "${CASEDIR}"
 
 ./xmlchange RESUBMIT=10
 
+./xmlchange JOB_WALLCLOCK_TIME=05:30:00 --subgroup case.st_archive
+
