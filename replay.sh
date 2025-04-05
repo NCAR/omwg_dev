@@ -6,3 +6,7 @@
 
 ./xmlchange STOP_N=5,RESUBMIT=3
 
+./check_case
+
+./case.submit
+
