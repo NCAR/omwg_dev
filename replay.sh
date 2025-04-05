@@ -4,3 +4,5 @@
 
 ./case.build
 
+./xmlchange STOP_N=5,RESUBMIT=3
+
