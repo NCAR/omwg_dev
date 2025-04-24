@@ -12,3 +12,5 @@
 
 ./case.submit
 
+./xmlchange CONTINUE_RUN=False,STOP_OPTION=nmonths,STOP_N=2
+
